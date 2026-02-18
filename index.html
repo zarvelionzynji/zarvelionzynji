@@ -80,7 +80,7 @@
                 </div>
                 <div class="w-1/2 md:w-full float-left leading-relaxed">
                     <h2 class="text-3xl font-normal leading-1.3 mb-4">What can I do?</h2>
-                    <p>Please try again in a few years or check out my <a href="https://blog.zynji.my.id">Blog</a>posts.</p>
+                    <p>Please try again in a few years or check out my <a href="https://blog.zynji.my.id">Blog</a> posts.</p>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@
                 <span id="cf-footer-item-ip" class="cf-footer-item hidden sm:block sm:mb-1">
                     Your IP:
                     <button type="button" id="cf-footer-ip-reveal" class="cf-footer-ip-reveal-btn">Click to reveal</button>
-                    <span class="hidden" id="cf-footer-ip">1.1.1.1</span>
+                    <span class="hidden" id="cf-footer-ip"></span>
                     <span class="cf-footer-separator sm:hidden">&bull;</span>
                 </span>
                 
@@ -123,6 +123,30 @@ function updateUTCTime() {
 
 updateUTCTime();
 setInterval(updateUTCTime, 1000);
+</script>
+<script>
+const fakeIPs = [
+  "127.0.0.1 (You are inside the system)",
+  "Location: Somewhere on Earth",
+  "Human detected",
+  "Mars Relay Station",
+  "Satellite signal locked",
+  "Under your chair",
+  "Nice try 😉",
+  "Proxy chain overloaded",
+  "Earth Citizen",
+  "Coffee machine connected",
+  "Router feeling sleepy",
+  "Signal lost... just kidding",
+  "Your neighbor's WiFi",
+  "Connected via potato network",
+  "Multiverse gateway active"
+];
+
+const randomText =
+  fakeIPs[Math.floor(Math.random() * fakeIPs.length)];
+
+document.getElementById("cf-footer-ip").textContent = randomText;
 </script>
 </body>
 </html>
